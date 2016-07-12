@@ -23,10 +23,6 @@ webpackJsonp([0],{
 
 	var _index2 = _interopRequireDefault(_index);
 
-	var _global = __webpack_require__(173);
-
-	var _global2 = _interopRequireDefault(_global);
-
 	var _language = __webpack_require__(174);
 
 	var _language2 = _interopRequireDefault(_language);
@@ -38,10 +34,10 @@ webpackJsonp([0],{
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	// 根据开发环境进行对应的操作
-	/**
-	 * Created by huangxinxin on 16/5/20.
-	 */
-	var debug = ("dev") === 'dev';
+	var debug = ("dev") === 'dev'; /**
+	                                           * Created by liuxu-s on 10/07/20.
+	                                           */
+
 
 	_vue2.default.use(_index4.default, {
 	  debug: debug,
@@ -52,7 +48,16 @@ webpackJsonp([0],{
 	var app = {
 	  data: function data() {
 	    return {
-	      global: _global2.default
+	      language: {
+	        active: 'chinese',
+	        list: [{
+	          id: 'chinese',
+	          text: 'language.chinese'
+	        }, {
+	          id: 'english',
+	          text: 'language.english'
+	        }]
+	      }
 	    };
 	  },
 
@@ -431,32 +436,7 @@ webpackJsonp([0],{
 /***/ 172:
 /***/ function(module, exports) {
 
-	module.exports = "<div id=\"demo\" class=\"container\">\n    <h1>Vue语言切换 filter</h1>\n    <section style=\"color: #000000; font-size: 18px; font-weight: bold\">\n        <div style=\"margin-bottom: 20px\">\n            {{ 'filter' | language global.language.active }}\n        </div>\n         <span class=\"language-switch\">\n            <label>{{ 'language.select' | language global.language.active }}:</label>\n            <select v-model=\"global.language.active\">\n                <option v-for=\"option in global.language.list\" v-bind:value=\"option.id\">\n                    {{ option.text | language global.language.active }}\n                </option>\n            </select>\n        </span>\n    </section>\n</div>";
-
-/***/ },
-
-/***/ 173:
-/***/ function(module, exports) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	var model = {
-	  // 语言
-	  language: {
-	    active: 'chinese',
-	    list: [{
-	      id: 'chinese',
-	      text: 'language.chinese'
-	    }, {
-	      id: 'english',
-	      text: 'language.english'
-	    }]
-	  }
-	};
-	exports.default = model;
+	module.exports = "<div id=\"demo\" class=\"container\">\n    <h1>Vue语言切换 filter</h1>\n    <section style=\"color: #000000; font-size: 18px; font-weight: bold\">\n        <div style=\"margin-bottom: 20px\">\n            {{ 'switchTest' | language language.active }}\n        </div>\n         <span class=\"language-switch\">\n            <label>{{ 'language.select' | language language.active }}:</label>\n            <select v-model=\"language.active\">\n                <option v-for=\"option in language.list\" v-bind:value=\"option.id\">\n                    {{ option.text | language language.active }}\n                </option>\n            </select>\n        </span>\n    </section>\n</div>";
 
 /***/ },
 
@@ -483,7 +463,7 @@ webpackJsonp([0],{
 	    english: 'English'
 	  }
 	};
-	config.filter = {
+	config.switchTest = {
 	  chinese: '语言切换测试',
 	  english: 'language switch test'
 	};

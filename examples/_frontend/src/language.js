@@ -13,7 +13,7 @@ config.language = {
     english: 'English'
   }
 }
-config.filter = {
+config.switchTest = {
   chinese: '语言切换测试',
   english: 'language switch test'
 }

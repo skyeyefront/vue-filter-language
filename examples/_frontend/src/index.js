@@ -1,5 +1,5 @@
 /**
- * Created by huangxinxin on 16/5/20.
+ * Created by liuxu-s on 10/07/20.
  */
 import $ from 'jquery'
 import Vue from 'vue'
@@ -7,7 +7,6 @@ import hljs from 'highlight.js'
 
 import './index.css'
 import template from './index.html'
-import global from './global.js'
 import languageConfig from './language.js'
 import VueFilterLanguage from '../../../src/index.js'
 
@@ -25,7 +24,16 @@ Vue.use(
 let app = {
   data () {
     return {
-      global
+      language: {
+        active: 'chinese',
+        list: [{
+          id: 'chinese',
+          text: 'language.chinese'
+        }, {
+          id: 'english',
+          text: 'language.english'
+        }]
+      }
     }
   },
   ready: function () {

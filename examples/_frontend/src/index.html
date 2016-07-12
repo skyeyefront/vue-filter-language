@@ -2,13 +2,13 @@
     <h1>Vue语言切换 filter</h1>
     <section style="color: #000000; font-size: 18px; font-weight: bold">
         <div style="margin-bottom: 20px">
-            {{ 'filter' | language global.language.active }}
+            {{ 'switchTest' | language language.active }}
         </div>
          <span class="language-switch">
-            <label>{{ 'language.select' | language global.language.active }}:</label>
-            <select v-model="global.language.active">
-                <option v-for="option in global.language.list" v-bind:value="option.id">
-                    {{ option.text | language global.language.active }}
+            <label>{{ 'language.select' | language language.active }}:</label>
+            <select v-model="language.active">
+                <option v-for="option in language.list" v-bind:value="option.id">
+                    {{ option.text | language language.active }}
                 </option>
             </select>
         </span>
