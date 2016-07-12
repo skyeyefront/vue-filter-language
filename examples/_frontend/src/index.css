@@ -1,0 +1,27 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: "Microsoft YaHei";
+    font-size: 12px;
+}
+
+.container {
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 8px 24px 8px 24px;
+}
+
+h1 {
+    color: darkcyan;
+}
+
+h2 {
+    color: #40a070;
+}
+
+section {
+    padding: 8px;
+    /*background-color: #2e2e2e;*/
+    color: #ffffff;
+    margin-bottom: 16px;
+}
